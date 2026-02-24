@@ -4,14 +4,17 @@ import { Context } from '../Context'
 
 function Board() {
     const [board, setBoard] = useState([])
-    const {rows, cols, count} = useContext(Context)
+    const { rows, cols, count, setCount } = useContext(Context)
     useEffect(() => {
         setBoard(creatBoard(rows, cols, count))
 
     }, [])
     function clicked(index) {
-        if (board[index].clicked) {
+        if (board[index].clicked || count === 0) {
             return
+        }
+        if (board[index].className === "bomb") {
+            setCount(count - 1)
         }
         setBoard(prevBoard => {
             const newBoard = [...prevBoard]
@@ -25,13 +28,16 @@ function Board() {
         })
     }
     return (
-        <div className='grid'>
-            {board.map((item, index) => {
-                return (
-                    <div key={index} className={item.className} onClick={() => clicked(index)} ></div>
-                )
-            })}
-        </div>
+        <>
+        <h1>{count}</h1>
+            <div className='grid'>
+                {board.map((item, index) => {
+                    return (
+                        <div key={index} className={item.className} onClick={() => clicked(index)} ></div>
+                    )
+                })}
+            </div>
+        </>
     )
 }
 
