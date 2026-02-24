@@ -11,7 +11,7 @@ function Restart() {
     }
     return (
         <div>
-            <button onClick={restartgame}> Restart game</button>
+            <button className='restart' onClick={restartgame}> Restart game</button>
         </div>
     )
 }

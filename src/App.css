@@ -88,7 +88,7 @@
   background-size: cover;
 }
 
-button {
+.restart {
   width: 15rem;
   height: 3rem;
   background-color: green;
@@ -98,17 +98,19 @@ button {
   font-size: 20px;
 }
 
-button:hover {
+.restart:hover {
   background-color: greenyellow;
   color: black;
   transform: scale(1.1);
 }
 
-button:active {
+.restart:active {
   background-color: black;
   color: white;
 }
-
+.feedbek-none{
+  display: none;
+}
 .feedbek-box {
   position: fixed;
   inset: 0;
@@ -138,4 +140,25 @@ button:active {
   font-weight: bold;
   color: rgb(83, 196, 31);
   pointer-events: auto; 
+}
+.danger{
+  color: red;
+  animation: flickering 1s linear infinite;
+  border: 2px solid red;
+  padding: 0 10px;
+  border-radius: 15px;
+}
+@keyframes flickering{
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50%{
+    transform: scale(1.2);
+    opacity: 0.5;
+  }
+  100%{
+    transform: scale(1);
+    opacity: 1;
+  }
 }
