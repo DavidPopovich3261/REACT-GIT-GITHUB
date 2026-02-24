@@ -2,8 +2,8 @@ import React, { useContext, useEffect, useState } from 'react'
 import { Context } from '../Context';
 
 function Timer() {
-    const { count } = useContext(Context)
-    const [timer, setTimer] = useState(70)
+    const { count, setFeedbek} = useContext(Context)
+    const [timer, setTimer] = useState(200)
     const [uitimer, setUitimer] = useState({
         minutes: 0,
         seconds: 0
@@ -12,6 +12,7 @@ function Timer() {
         setTimeout(() => {
             setTimer(timer - 1)
             if (timer < 0 || count === 0) {
+                setFeedbek("Game Over!")
                 return false
             }
             setUitimer({ minutes: (Math.floor(timer / 60)), seconds: (timer % 60) })
@@ -20,7 +21,7 @@ function Timer() {
 
     return (
         <div>
-            <p>{uitimer.minutes}:{uitimer.seconds}</p>
+            <h1>{uitimer.minutes}:{uitimer.seconds}</h1>
         </div>
     )
 }
