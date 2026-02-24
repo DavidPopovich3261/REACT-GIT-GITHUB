@@ -8,8 +8,8 @@ function App() {
   return (
     <>
       <Provider >
-        <Board />
         <Timer />
+        <Board />
       </Provider>
     </>
   )
