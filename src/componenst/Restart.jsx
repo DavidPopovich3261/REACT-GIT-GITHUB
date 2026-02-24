@@ -2,11 +2,12 @@ import React, { useContext } from 'react'
 import { Context } from '../Context'
 
 function Restart() {
-    const { setCount, setTimer, primaryVariables, restart, setRestart } = useContext(Context)
+    const { setCount, setTimer, primaryVariables, restart, setRestart, setFeedbek} = useContext(Context)
     function restartgame() {
         setRestart(!restart)
         setTimer(primaryVariables.timer)
         setCount(primaryVariables.count)
+        setFeedbek("")
     }
     return (
         <div>

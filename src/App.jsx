@@ -13,9 +13,8 @@ function App() {
       <Provider >
         <Header/>
         <Feedbek/>
-        {/* <Timer /> */}
-        <Restart />
         <Board />
+        <Restart />
       </Provider>
     </>
   )
