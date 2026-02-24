@@ -9,11 +9,26 @@ function Board() {
         setBoard(creatBoard(rows, cols, count))
 
     }, [])
+    function clicked(index) {
+        if (board[index].clicked) {
+            return
+        }
+        setBoard(prevBoard => {
+            const newBoard = [...prevBoard]
+            newBoard[index] = {
+                ...newBoard[index],
+                className: `${newBoard[index].className}-disply`,
+                clicked: true
+            }
+
+            return newBoard
+        })
+    }
     return (
         <div className='grid'>
             {board.map((item, index) => {
                 return (
-                    <div key={index} className={item.className} ></div>//onClick={(e) => checkBox(e)}
+                    <div key={index} className={item.className} onClick={() => clicked(index)} ></div>
                 )
             })}
         </div>

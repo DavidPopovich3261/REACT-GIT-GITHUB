@@ -22,6 +22,7 @@
   height: 50px;
   border: 2px solid #435168;
   background-color: #26344c;
+  box-shadow: 1px 1px 5px 5px black;
 }
 
 .bomb {
@@ -31,6 +32,7 @@
   height: 50px;
   border: 2px solid #435168;
   background-color: #26344c;
+  box-shadow: 1px 1px 5px 5px black;
 }
 
 .none:hover {
@@ -44,4 +46,22 @@
   transform: translateY(-1px);
   border-radius: 10px;
   border: 2px solid green;
+}
+.none-disply{
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 50px;
+  border: 2px solid #435168;
+  background-image: url("/image.png");
+  background-size: cover;
+}
+.bomb-disply{
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 50px;
+  border: 2px solid #435168;
+  background-image: url("/bomb.png");
+  background-size: cover;
 }
