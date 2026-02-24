@@ -4,7 +4,7 @@ const Context = createContext();
 
 function Provider({ children }) {
     const [primaryVariables, setPrimaryVariables] = useState({
-        count: 5,
+        count: 10,
         rows: 10,
         cols: 10,
         timer: 120
@@ -14,6 +14,7 @@ function Provider({ children }) {
     const [cols, setCols] = useState(primaryVariables.cols);
     const [timer, setTimer] = useState(primaryVariables.timer)
     const [restart, setRestart] = useState(true)
+    const [feedbek, setFeedbek] = useState("")
 
     return (
         <Context value={{
@@ -22,7 +23,8 @@ function Provider({ children }) {
             cols, setCols,
             timer, setTimer,
             primaryVariables, setPrimaryVariables,
-            restart, setRestart
+            restart, setRestart,
+            feedbek, setFeedbek
         }}>
             {children}
         </Context>
