@@ -1,12 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { creatBoard } from '../utils/creatBoard'
+import { Context } from '../Context'
 
 function Board() {
     const [board, setBoard] = useState([])
-    // const {rows, cols, count} = useContext(Context()) מחכה לקוד של דוד
+    const {rows, cols, count} = useContext(Context)
     useEffect(() => {
-        // setBoard(creatBoard(rows, cols, count)) מחכה לקוד של דוד
-        setBoard(creatBoard(10, 10, 5)) //בינתיים עד שהקוד של דוד מגיע
+        setBoard(creatBoard(rows, cols, count))
 
     }, [])
     return (
