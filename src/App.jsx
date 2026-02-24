@@ -3,6 +3,7 @@ import { Provider } from './Context'
 import Board from './componenst/Board'
 import Feedbek from './componenst/Feedbek'
 import Header from './componenst/Header'
+import Restart from './componenst/Restart'
 import Timer from './componenst/Timer'
 
 function App() {
@@ -12,6 +13,8 @@ function App() {
       <Provider >
         <Header/>
         <Feedbek/>
+        {/* <Timer /> */}
+        <Restart />
         <Board />
       </Provider>
     </>
