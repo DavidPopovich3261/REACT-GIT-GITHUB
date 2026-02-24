@@ -7,7 +7,7 @@ function Provider({ children }) {
         count: 10,
         rows: 10,
         cols: 10,
-        timer: 120
+        timer: 2
     })
     const [count, setCount] = useState(primaryVariables.count);
     const [rows, setRows] = useState(primaryVariables.rows);
