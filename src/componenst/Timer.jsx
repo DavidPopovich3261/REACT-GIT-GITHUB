@@ -17,7 +17,7 @@ function Timer() {
 
     return (
         <div>
-            <h1>{uitimer.minutes}:{uitimer.seconds}</h1>
+            <h1><span className={(timer >= 0 && timer < 10) ? "danger": ""}>{uitimer.minutes}:{uitimer.seconds}</span></h1>
         </div>
     )
 }
